@@ -47,7 +47,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
+        let synopsis = movie["overview"] as! String
+        
         cell.titleLabel!.text = title
+        cell.synopsisLabel!.text = synopsis
+        
+        let baseUrl = "https://image.tmdb.org/t/p/w185"
+        let posterPath = movie["poster_path"] as! String
+        let posterUrl = URL(string: baseUrl + posterPath)
+        
         
         return cell
     }
