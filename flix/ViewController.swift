@@ -8,15 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     var movies = [[String:Any]]()
@@ -42,6 +33,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
            }
         }
         task.resume()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel!.text = "row: \(indexPath.row)"
+        
+        return cell
+        
     }
 
 
